@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AP European History Active Recall</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell sidebar-hidden">
+      <button id="sidebarToggle" class="sidebar-toggle" aria-label="Open sidebar">☰</button>
+
+      <aside id="sidebar" class="sidebar collapsed" aria-label="Filters and navigation">
+        <img src="./assets/icons/citru-study.png" alt="Citru-study logo" class="brand-logo" />
+        <h1>AP European History Active Recall</h1>
+        <p class="subtitle">Powered by Citru-study</p>
+        <p class="edition-meta">Vol. 1 | AP Euro Edition | Printed Study Desk</p>
+        <nav class="main-nav">
+          <button data-view="home" class="nav-btn active">Home</button>
+          <button data-view="flashcard" class="nav-btn">Flashcards</button>
+          <button data-view="timeline" class="nav-btn">Timeline</button>
+          <button data-view="matching" class="nav-btn">Causal Matching</button>
+          <button data-view="mapRecall" class="nav-btn">Map Recall</button>
+          <button data-view="openRecall" class="nav-btn">SAQ Topic Review</button>
+          <button data-view="challenge" class="nav-btn">Daily Sample LEQ</button>
+          <button data-view="pdf" class="nav-btn">Source PDF</button>
+          <button data-view="about" class="nav-btn">About</button>
+        </nav>
+        <section>
+          <h2>Tag Filter</h2>
+          <div id="tagFilter" class="tag-filter"></div>
+        </section>
+        <section>
+          <h2>Time Periods</h2>
+          <div id="periodFilter" class="tag-filter"></div>
+        </section>
+      </aside>
+
+      <main id="mainContent" class="main-content">
+        <section id="homeView" class="view active"></section>
+        <section id="flashcardView" class="view"></section>
+        <section id="timelineView" class="view"></section>
+        <section id="matchingView" class="view"></section>
+        <section id="mapRecallView" class="view"></section>
+        <section id="openRecallView" class="view"></section>
+        <section id="challengeView" class="view"></section>
+        <section id="pdfView" class="view"></section>
+        <section id="aboutView" class="view"></section>
+      </main>
+    </div>
+
+    <div id="helpOverlay" class="help-overlay hidden" role="dialog" aria-modal="true">
+      <div class="help-card">
+        <h3>Keyboard Shortcuts</h3>
+        <ul>
+          <li><strong>Space:</strong> Flip / reveal answer</li>
+          <li><strong>Left / Right:</strong> Navigate</li>
+          <li><strong>Ctrl+Enter:</strong> Submit open recall</li>
+          <li><strong>Esc:</strong> Close modals / home</li>
+          <li><strong>?:</strong> Toggle this help</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <button id="themeToggle" class="theme-toggle">Toggle Dark Mode</button>
+      <form id="emailSignupForm" class="email-signup">
+        <label for="emailInput">Want active recall for other subjects? Sign up for updates.</label>
+        <div class="email-row">
+          <input id="emailInput" type="email" placeholder="you@example.com" required />
+          <button type="submit">Notify Me</button>
+        </div>
+        <p id="emailFeedback" class="email-feedback"></p>
+      </form>
+      <!--
+      Example Formspree integration:
+      <form action="https://formspree.io/f/your-placeholder-id" method="POST">
+        <input type="email" name="email" />
+      </form>
+      -->
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
